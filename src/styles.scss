@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+$grid-breakpoints: ( // Extra small screen / phone
+  "xs": 0, // Small screen / phone
+  "sm": 576px, // Medium screen / tablet
+  "md": 768px, // Large screen / desktop
+  "lg": 992px, // Extra large screen / wide desktop
+  "xl": 1200px);
+// Mixins
+@mixin mediaContainer {
+    @media (min-width: map-get($grid-breakpoints, "xl")) {
+        @content;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+figure{
+    margin: 0;
+}
+
+
+.container{
+    @include mediaContainer{
+        max-width: 1670px;
+    }
+}
+
+.list-group-flush{
+    .list-group-item{
+        border: 0;
+    }
+}

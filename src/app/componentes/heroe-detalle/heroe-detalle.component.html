@@ -1,0 +1,148 @@
+<section class="section-heroe-detalle">
+    <div *ngIf="idHero | async as heroe">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-data-usuario">
+                <div class="card">
+                    <img src="{{heroe.images.lg}}" alt="{{heroe.name}}">
+                </div>
+                <div class="container-info">
+                    <h1 class="title">{{heroe.name}}</h1> 
+                    <small class="slug">{{heroe.slug}}</small>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-data-info-usuario">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                        <div class="card card-biography">
+                            <div class="card-title">
+                                <h5>Biography</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group-flush">
+                                    <li class="list-group-item">
+                                       <strong>Full Name:</strong> {{heroe.biography.fullName}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Alter egos: </strong> {{heroe.biography.alterEgos}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <p><strong>Aliases:</strong></p>
+                                        <p *ngFor="let aliase of heroe.biography.aliases">
+                                            {{aliase}}
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Place of Birth:</strong> {{heroe.biography.placeOfBirth}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>First appearance:</strong> {{heroe.biography.firstAppearance}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Publisher:</strong> {{heroe.biography.publisher}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Alignment: </strong> {{heroe.biography.alignment}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card card-work">
+                            <div class="card-title">
+                                <h5>Work</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group-flush">
+                                    <li class="list-group-item">
+                                        <strong>occupation:</strong> {{heroe.work.occupation}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Base:</strong> {{heroe.work.base}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="card card-apariencia">
+                                    <div class="card-title">
+                                        <h5>Appearance</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group-flush">
+                                            <li class="list-group-item">
+                                                <strong>Gender:</strong> {{heroe.appearance.gender}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Race: </strong> {{heroe.appearance.race}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Height:</strong> {{heroe.appearance.height[0]}} - {{heroe.appearance.height[1]}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Weight:</strong> {{heroe.appearance.weight[0]}} - {{heroe.appearance.weight[1]}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Eye color:</strong> {{heroe.appearance.eyeColor}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Hair Color:</strong> {{heroe.appearance.hairColor}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="card card-powerstats">
+                                    <div class="card-title">
+                                        <h5>Powerstats</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group-flush">
+                                            <li class="list-group-item">
+                                                <strong>Intelligence:</strong> {{heroe.powerstats.intelligence}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Strength:</strong> {{heroe.powerstats.strength}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Speed:</strong> {{heroe.powerstats.speed}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Durability:</strong> {{heroe.powerstats.durability}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Power:</strong> {{heroe.powerstats.power}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Combat: </strong> {{heroe.powerstats.combat}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card card-connections">
+                                    <div class="card-title">
+                                        <h5>Connections</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group-flush">
+                                            <li class="list-group-item">
+                                                <strong>Group Affiliation:</strong> {{heroe.connections.groupAffiliation}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Relatives:</strong> {{heroe.connections.relatives}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

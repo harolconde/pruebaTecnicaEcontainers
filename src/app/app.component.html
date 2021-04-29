@@ -1,0 +1,38 @@
+<!-- Toolbar -->
+<header id="header" class="">
+   <nav class="navbar navbar-expand-lg navbar-light container">
+      <a class="navbar-brand" [routerLink] = "['/']">
+         <figure>
+            <img src="../assets/icons/Logo.svg" alt="logo" class="logo">
+         </figure>
+      </a>
+      <div class="navbar-text" id="navbarText">
+         <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+               <a class="nav-link" href="#">Item 1 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">2 item</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">3 item</a>
+            </li>
+         </ul>
+      </div>
+   </nav>
+</header>
+<!-- Contenido pagina -->
+<main id="main" class="container-fluid" role="main">
+   <div class="container">
+      <router-outlet></router-outlet>
+   </div>
+</main>
+<!-- Fin contenido pagina -->
+<!-- Footer -->
+<footer id="footer">
+   <div class="container container-footer">
+      <figure>
+         <img class="logo-footer" src="../assets/icons/Logo.svg" alt="Logo Dev-Econ">
+      </figure>
+   </div>
+</footer>

@@ -1,0 +1,30 @@
+<div class="form-inline my-2 my-lg-0">
+    <div class="input-group">
+        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Buscar personaje" name="filterPost" [(ngModel)]="filterPost">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <img src="../../../assets/icons/noun_Zoom_1446108.svg" alt="">
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="container-cards-heroes">
+    <div class="card" *ngFor="let heroe of listaHeroes | slice:0:20 | filter:filterPost" [routerLink]="['/heroe', heroe.id]">
+        <div class="card-header">
+            <div class="container-img">
+                <img src="{{heroe.images.sm}}" class="img-heroe" alt="{{heroe.name}}">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{heroe.name}}</h5>
+            <ul class="list-group-flush">
+                <li class="list-group-item">Intelligence: <strong>{{heroe.powerstats.intelligence}}</strong></li>
+                <li class="list-group-item">Speed: <strong>{{heroe.powerstats.speed}}</strong></li>
+                <li class="list-group-item">Power: <strong>{{heroe.powerstats.power}}</strong></li>
+                <li class="list-group-item">Gender: <strong>{{heroe.appearance.gender}}</strong></li>
+                <li class="list-group-item">Race: <strong>{{heroe.appearance.race}}</strong></li>
+            </ul>
+        </div>
+    </div>
+</div>
